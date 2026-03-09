@@ -1,0 +1,45 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.omni.previewer
+productName: Omni Previewer
+copyright: Copyright © 2025
+files:
+  - filter:
+      - main.js
+      - index.html
+      - icon.png
+      - icon.icns
+      - icon.ico
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  icon: icon.ico
+mac:
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  icon: icon.icns
+  category: public.app-category.developer-tools
+linux:
+  target:
+    - target: AppImage
+      arch:
+        - x64
+  icon: icon.png
+  category: Development
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  installerLanguages:
+    - zh_CN
+  language: '2052'
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+dmg:
+  title: Omni Previewer ${version}
+electronVersion: 29.4.6
